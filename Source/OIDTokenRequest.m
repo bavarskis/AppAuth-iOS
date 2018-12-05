@@ -264,7 +264,7 @@ static NSString *const kAdditionalParametersKey = @"additionalParameters";
   static NSString *const kHTTPPost = @"POST";
   static NSString *const kHTTPContentTypeHeaderKey = @"Content-Type";
   static NSString *const kHTTPContentTypeHeaderValue =
-      @"application/x-www-form-urlencoded; charset=UTF-8";
+      @"application/x-www-form-urlencoded";
 
   NSURL *tokenRequestURL = [self tokenRequestURL];
   NSMutableURLRequest *URLRequest = [[NSURLRequest requestWithURL:tokenRequestURL] mutableCopy];
