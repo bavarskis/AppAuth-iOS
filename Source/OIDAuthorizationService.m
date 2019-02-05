@@ -503,6 +503,13 @@ NS_ASSUME_NONNULL_BEGIN
       // max_age is not directly supported by AppAuth.
     }
 
+    // Setting response cookies
+    NSArray* httpCookies = [NSHTTPCookie cookiesWithResponseHeaderFields:[HTTPURLResponse allHeaderFields] forURL:URLRequest.URL];
+    for (NSHTTPCookie* cookie in httpCookies)
+    {
+      [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:cookie];
+    }
+                
     // Success
     dispatch_async(dispatch_get_main_queue(), ^{
       callback(tokenResponse, nil);
